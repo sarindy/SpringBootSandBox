@@ -6,21 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.securityCfg.UserAuthentication;
 
-
-
-
 @RestController
 public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
-	
-	
+
 	@Autowired
 	private UserAuthentication userAuth;
-	
-	
 
 	@RequestMapping("/initRole")
 	public String InitialRole() {
@@ -57,17 +50,17 @@ public class UserController {
 		userService.saveUser(user, "USER");
 		return "User Created";
 	}
-	
+
 	@RequestMapping("/testUser")
 	public String testUser() {
-		
+
 		User user = new User();
-		user=userService.findUserByEmail("api@dnynn.com");
+		user = userService.findUserByEmail("api@dnynn.com");
 		System.out.println(user.getFirstName());
 		System.out.println(user.getEmail());
 		System.out.println(user.getPassword());
 		System.out.println(userAuth.Authenticated(user, "123456"));
-		
+
 		return "User Created";
 	}
 
