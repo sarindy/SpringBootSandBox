@@ -1,4 +1,4 @@
-package com.example.userController;
+package com.example.demo.users;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.securityCfg.Role;
-import com.example.securityCfg.User;
+
 
 
 

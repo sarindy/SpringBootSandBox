@@ -1,12 +1,11 @@
-package com.example.userController;
+package com.example.demo.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.securityCfg.Role;
-import com.example.securityCfg.User;
-import com.example.securityCfg.UserAuthentication;
+import com.example.demo.securityCfg.UserAuthentication;
+
 
 
 

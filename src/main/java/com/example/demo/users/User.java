@@ -1,4 +1,4 @@
-package com.example.securityCfg;
+package com.example.demo.users;
 
 import java.util.List;
 

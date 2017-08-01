@@ -1,4 +1,4 @@
-package com.example.securityCfg;
+package com.example.demo.securityCfg;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

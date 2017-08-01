@@ -1,9 +1,9 @@
-package com.example.userController;
+package com.example.demo.users;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.securityCfg.Role;
+
 
 
 

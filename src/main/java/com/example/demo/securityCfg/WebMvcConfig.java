@@ -1,4 +1,4 @@
-package com.example.securityCfg;
+package com.example.demo.securityCfg;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

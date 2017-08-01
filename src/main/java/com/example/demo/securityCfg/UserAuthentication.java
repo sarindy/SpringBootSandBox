@@ -1,8 +1,10 @@
-package com.example.securityCfg;
+package com.example.demo.securityCfg;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.example.demo.users.User;
 
 
 
