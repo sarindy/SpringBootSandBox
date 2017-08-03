@@ -10,9 +10,9 @@ import javax.persistence.Table;
 //import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="image")
+@Table(name = "image")
 public class Image {
-	
+
 	public int getId() {
 		return id;
 	}
@@ -43,13 +43,11 @@ public class Image {
 		this.imageName = imageName;
 		this.file_path = file_path;
 	}
-	
 
 	public Image() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,14 +55,11 @@ public class Image {
 	private int id;
 
 	@Column(name = "image_name")
-	//@NotEmpty(message = "*Please provide first name")
+	// @NotEmpty(message = "*Please provide first name")
 	private String imageName;
 
 	@Column(name = "file_path")
-	//@NotEmpty(message = "*Please provide last name")
+	// @NotEmpty(message = "*Please provide last name")
 	private String file_path;
-	
-	
-
 
 }
