@@ -14,6 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -23,6 +25,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private DataSource dataSource;
+	
+	@Autowired
+	CustomSuccessHandler customSuccessHandler;
 
 	@Value("${spring.queries.users-query}")
 	private String usersQuery;
@@ -39,9 +44,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/api/**").hasAnyAuthority("API").antMatchers("/admin/**")
-				.hasAnyAuthority("ADMIN").antMatchers("/user/**").hasAnyAuthority("USER").anyRequest().permitAll().and().httpBasic().and().csrf().disable();
-				//.fullyAuthenticated().and().httpBasic().and().csrf().disable();
+		/*http.authorizeRequests().antMatchers("/api/**").hasAnyAuthority("API").antMatchers("/admin/**")
+				.hasAnyAuthority("ADMIN").antMatchers("/user/**").hasAnyAuthority("USER").anyRequest().
+				fullyAuthenticated().and().formLogin().loginPage("/login").and().httpBasic().and().csrf().disable();
+*/		
+		http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/user/**").hasAnyAuthority("USER")
+		.antMatchers("/admin/**").hasAnyAuthority("ADMIN").antMatchers("/api/**").hasAnyAuthority("API").and()
+		.formLogin().loginPage("/login").successHandler(customSuccessHandler).usernameParameter("email")
+		.passwordParameter("password").and().logout().logoutSuccessUrl("/logout").and().csrf().and()
+		.exceptionHandling().accessDeniedPage("/access-denied");
 
 	}
 
