@@ -57,7 +57,7 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 		} else if (isCustomer(roles)) {
 			url = "/customer/customerHome";
 		}else if (isApi(roles)) {
-			url = "/api/upload";
+			url = "/api/angular";
 		} 		else {
 			url = "/access-denied";
 		}

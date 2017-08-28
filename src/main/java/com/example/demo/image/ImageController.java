@@ -24,6 +24,13 @@ public class ImageController {
 		modelAndView.setViewName("/api/image");
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/mastercard", method = RequestMethod.GET)
+	public ModelAndView getmastercard() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/mastercard");
+		return modelAndView;
+	}
 
 	@RequestMapping(value = "/api/upload", method = RequestMethod.POST) 
 	public ModelAndView singleFileUpload(@RequestParam("file") MultipartFile file) {

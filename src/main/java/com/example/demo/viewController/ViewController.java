@@ -21,5 +21,26 @@ public class ViewController {
 		modelAndView.setViewName("api/api");
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/api/angular", method = RequestMethod.GET)
+	public ModelAndView getAngular() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("api/angular");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/bootstrap/login", method = RequestMethod.GET)
+	public ModelAndView bootstrapLogin() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/bootstrap/login");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/loginGoogle", method = RequestMethod.GET)
+	public ModelAndView loginGoogle() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/loginGoogle");
+		return modelAndView;
+	}
 
 }
